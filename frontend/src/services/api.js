@@ -45,7 +45,7 @@ export const deleteScan = async (scanId) => {
 };
 
 export const downloadScanReport = (scanId) => {
-  window.open(`http://127.0.0.1:8000/api/v1/scans/${scanId}/report`, '_blank');
+  window.open(`${API_BASE_URL}/scans/${scanId}/report`, '_blank');
 };
 
 // AI Remediation APIs

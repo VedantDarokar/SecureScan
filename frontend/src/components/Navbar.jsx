@@ -74,7 +74,7 @@ export default function Navbar({ backendOnline, user, onLogout, onGoHome }) {
 
           {/* Swagger docs link */}
           <a
-            href="http://127.0.0.1:8000/docs"
+            href={(import.meta.env.VITE_API_BASE_URL ? import.meta.env.VITE_API_BASE_URL.replace(/\/api\/v1\/?$/, '') : 'http://127.0.0.1:8000') + '/docs'}
             target="_blank"
             rel="noreferrer"
             className="hidden xl:flex items-center space-x-1 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 border border-slate-800 transition"
