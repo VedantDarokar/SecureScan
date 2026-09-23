@@ -54,17 +54,19 @@ export default function ScanForm({ onStartScan, isScanning }) {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="relative flex flex-col sm:block">
-          <div className="absolute top-3.5 sm:top-auto sm:inset-y-0 left-0 pl-3.5 sm:pl-4 flex items-center pointer-events-none text-slate-500">
-            <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-teal-500/80" />
+          <div className="relative w-full">
+            <div className="absolute inset-y-0 left-0 pl-3.5 sm:pl-4 flex items-center pointer-events-none text-slate-500">
+              <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-teal-500/80" />
+            </div>
+            <input
+              type="text"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+              disabled={isScanning}
+              placeholder="https://your-target-application.com"
+              className="w-full pl-10 sm:pl-12 pr-4 sm:pr-36 py-3 sm:py-3.5 bg-slate-950/80 border border-slate-700/80 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500 text-xs sm:text-sm font-mono transition shadow-inner"
+            />
           </div>
-          <input
-            type="text"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-            disabled={isScanning}
-            placeholder="https://your-target-application.com"
-            className="w-full pl-10 sm:pl-12 pr-4 sm:pr-36 py-3 sm:py-3.5 bg-slate-950/80 border border-slate-700/80 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500 text-xs sm:text-sm font-mono transition shadow-inner"
-          />
           <button
             type="submit"
             disabled={isScanning}
